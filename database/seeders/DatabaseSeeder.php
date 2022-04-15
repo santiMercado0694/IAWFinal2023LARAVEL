@@ -17,26 +17,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $Data = [
-           [
-            'name' => 'Santiago' ,
-            'email' => 'santimercado06.94@gmail.com' ,
-            'email_verified_at' => null ,
-            'password' => bcrypt('12341234') ,
-           ],
-           [ 
-            'name' => 'Juan' ,
-            'email' => 'Juancito0305@gmail.com' ,
-            'email_verified_at' => null ,
-            'password' => bcrypt('12341234') ,
-           ],
-           [
-            'name' => 'Raul' ,
-            'email' => 'raulguarnizo@gmail.com' ,
-            'email_verified_at' => null ,
-            'password' => bcrypt('12341234') ,
-           ],
-        ];
-        DB::table('users')->insert($Data);
+        $this->call(UserTableSeeder::class);
     }
 }
