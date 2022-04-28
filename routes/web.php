@@ -27,7 +27,7 @@ Route::post('/remove', [CartController::class, 'remove'])->name('cart.remove');
 
 Route::post('/clear', [CartController::class, 'clear'])->name('cart.clear');
 
-Route::resource('products', ProductController::class);
+Route::resource('products', ProductController::class)->middleware(['auth']);
 
 
 

@@ -37,20 +37,8 @@
                             {{ $product->stock }}
                         </div>
                         <div class="form-group">
-                            <strong>Shipping Cost:</strong>
-                            {{ $product->shipping_cost }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Description:</strong>
-                            {{ $product->description }}
-                        </div>
-                        <div class="form-group">
                             <strong>Category Id:</strong>
                             {{ $product->category_id }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Brand Id:</strong>
-                            {{ $product->brand_id }}
                         </div>
                         <div class="form-group">
                             <strong>Image Path:</strong>

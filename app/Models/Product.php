@@ -12,10 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $details
  * @property $price
  * @property $stock
- * @property $shipping_cost
- * @property $description
  * @property $category_id
- * @property $brand_id
  * @property $image_path
  * @property $created_at
  * @property $updated_at
@@ -30,10 +27,7 @@ class Product extends Model
 		'name' => 'required',
 		'price' => 'required',
 		'stock' => 'required',
-		'shipping_cost' => 'required',
-		'description' => 'required',
 		'category_id' => 'required',
-		'brand_id' => 'required',
 		'image_path' => 'required',
     ];
 
@@ -44,7 +38,7 @@ class Product extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','details','price','stock','shipping_cost','description','category_id','brand_id','image_path'];
+    protected $fillable = ['name','details','price','stock','category_id','image_path'];
 
 
 

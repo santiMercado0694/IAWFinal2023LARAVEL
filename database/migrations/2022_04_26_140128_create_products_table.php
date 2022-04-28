@@ -18,11 +18,8 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('details')->nullable();
             $table->double('price');
-            $table->integer('stock');
-            $table->double('shipping_cost');
-            $table->text('description');
+            $table->integer('stock');       
             $table->integer('category_id');
-            $table->unsignedInteger('brand_id')->unsigned();
             $table->string('image_path');
             $table->timestamps();
         });

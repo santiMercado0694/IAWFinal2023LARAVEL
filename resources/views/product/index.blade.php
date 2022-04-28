@@ -40,10 +40,7 @@
 										<th>Details</th>
 										<th>Price</th>
 										<th>Stock</th>
-										<th>Shipping Cost</th>
-										<th>Description</th>
 										<th>Category Id</th>
-										<th>Brand Id</th>
 										<th>Image Path</th>
 
                                         <th></th>
@@ -58,10 +55,7 @@
 											<td>{{ $product->details }}</td>
 											<td>{{ $product->price }}</td>
 											<td>{{ $product->stock }}</td>
-											<td>{{ $product->shipping_cost }}</td>
-											<td>{{ $product->description }}</td>
 											<td>{{ $product->category_id }}</td>
-											<td>{{ $product->brand_id }}</td>
 											<td>{{ $product->image_path }}</td>
 
                                             <td>
