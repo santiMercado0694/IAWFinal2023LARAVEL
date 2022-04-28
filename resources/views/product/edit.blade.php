@@ -1,8 +1,6 @@
 @extends('Plantillas.appAdmin')
 
-@section('template_title')
-    Update Product
-@endsection
+<br></br>
 
 @section('content')
     <section class="content container-fluid">
@@ -11,10 +9,7 @@
 
                 @includeif('partials.errors')
 
-                <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">Update Product</span>
-                    </div>
+                <div class="card card-default">               
                     <div class="card-body">
                         <form method="POST" action="{{ route('products.update', $product->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
@@ -23,8 +18,18 @@
                             @include('product.form')
 
                         </form>
+                                                
                     </div>
+                    
                 </div>
+
+                <br></br>
+                <br></br>
+
+                <div class="float-right">
+                            <a class="btn btn-success" href="{{ route('products.index') }}"> Volver</a>
+                        </div>
+
             </div>
         </div>
     </section>

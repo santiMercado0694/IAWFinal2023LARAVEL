@@ -10,7 +10,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'BAHIA COMPUTACION ADMINISTRACION' }}</title>
+    <title>{{ $title ?? 'ADMINISTRACION' }}</title>
 
     <link rel="stylesheet" href={{ url('css/app.css') }}>
     <link rel="stylesheet" href={{ url('css/estilo.css') }}>
@@ -27,11 +27,15 @@
 
 <div id="app">
 
+    @include('Herramientas.navAdmin')
+
     <main class="py-4">
 
         @yield('content')
 
     </main>
+
+
 
     
 
