@@ -27,12 +27,11 @@
                             {{ $product->stock }}
                         </div>
                         <div class="form-group">
-                            <strong>Id categoria:</strong>
+                            <strong>Categoria:</strong>
                             {{ $product->category_id }}
                         </div>
                         <div class="form-group">
-                            <strong>imagen:</strong>
-                            <img src="/images/{{ $product->image_path }}" style="height: 150px; width: 150px;display: block;" alt="{{ $product->image_path }}">                                                    
+                            <img src="/images/{{ $product->image_path }}" style="height: 150px; width: 150px; display: block;" alt="{{ $product->image_path }}">                                                    
                         </div>
 
                     </div>
