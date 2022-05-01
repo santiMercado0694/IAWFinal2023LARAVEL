@@ -29,6 +29,15 @@ class CartController extends Controller
 
     }
 
+    public function buy()  {
+
+        $cartCollection = \Cart::getContent();
+
+
+        return view('buy')->withTitle('BAHIA COMPUTACION')->with(['cartCollection' => $cartCollection]);;
+
+    }
+
     public function remove(Request $request){
 
         \Cart::remove($request->id);
@@ -67,7 +76,7 @@ class CartController extends Controller
 
     public function update(Request $request){
 
-
+        
         if(($request->quantity) > ($request->stock)){
 
             return redirect()->route('cart.index')->with('alert_msg', 'Cantidad no disponible en stock de '.$request->name);
@@ -98,6 +107,28 @@ class CartController extends Controller
         \Cart::clear();
 
         return redirect()->route('cart.index')->with('success_msg', 'Tu carrito se vacio con exito');
+
+    }
+
+    public function pagar(){
+    
+        $carrito = \Cart::getContent();
+
+        foreach($carrito as $producto){
+   
+            $id = $producto->id;
+            $cantidad = ($producto->attributes->stock) - ($producto->quantity);
+            $product = Product::find($id);
+            $product->stock = $cantidad;
+            $product->save();
+        }    
+
+        \Cart::clear();
+
+        /*return redirect()->route('cart.buy')
+            ->with('success', ' El producto ' . $request->name .' se edito exitosamente');*/
+
+            return redirect()->route('shop');
 
     }
 }

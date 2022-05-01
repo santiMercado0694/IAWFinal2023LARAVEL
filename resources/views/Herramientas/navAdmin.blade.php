@@ -22,6 +22,12 @@
 
              <li class="nav-item">
 
+                <a class="nav-link" href="{{ route('shop') }}">USUARIOS</a>
+
+            </li>
+
+            <li class="nav-item">
+
                 <a class="nav-link" href="{{ route('shop') }}">PAGINA PRINCIPAL</a>
 
             </li>

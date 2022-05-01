@@ -82,7 +82,7 @@
 
                     <h4>No hay productos en tu carrito</h4><br>
 
-                    <a href="/" class="btn btn-success">Ver tienda</a>
+                    <a href="/shop" class="btn btn-success">Ver tienda</a>
 
                 @endif
 
@@ -191,7 +191,7 @@
 
                     </div>
 
-                    <br><a href="/" class="btn btn-success">Seguir comprando</a>
+                    <br><a href="/shop" class="btn btn-success">Seguir comprando</a>
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -227,9 +227,9 @@
 
                                         <div class="modal-footer">
 
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>                                                                           
 
-                                            <button type="button" class="btn btn-primary">Confirmar</button>
+                                            <a href="/buy" class="btn btn-primary">Confirmar</a>                                            
 
                                         </div>
 
