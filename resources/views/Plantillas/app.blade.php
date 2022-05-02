@@ -12,6 +12,7 @@
 
     <title>{{ $title ?? 'BAHIA COMPUTACION' }}</title>
 
+    <link rel="icon" href="/images/logo.png" type="image/png"  >
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
 
