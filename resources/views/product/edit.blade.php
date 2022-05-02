@@ -12,35 +12,70 @@
                         <span class="card-title">Editar Producto</span>
                     </div>               
                     <div class="card-body">
-                        <form  action="{{ route('product.actualizar')}}" method="POST">
+                        <form class="needs-validation"  action="{{ route('product.actualizar')}}" method="POST" novalidate>
                           {{ csrf_field() }}
                             
                           <div class="form-group row">
 
-                                        <input type="hidden" value="{{ $product->id}}" id="id" name="id">
+                                        <input type="hidden" value="{{ $product->id}}" id="id" name="id" >
 
                                         <label><strong>Nombre:</strong></label>
-                                        <input class="form-control" type="text" value="{{ $product->name}}" id="name" name="name">
+                                        <input class="form-control" type="text" minlength="1" value="{{ $product->name}}" id="name" name="name" required>
 
                                         <label><strong>Descripcion:</strong></label>
-                                        <input class="form-control" type="text" value="{{ $product->details}}" id="details" name="details">
+                                        <input class="form-control" type="text" minlength="1" value="{{ $product->details}}" id="details" name="details" required>
 
                                         <label><strong>Precio:</strong></label>
-                                        <input class="form-control" type="number" value="{{ $product->price }}" id="price" name="price">
+                                        <input class="form-control" type="number" minlength="1" min="0" value="{{ $product->price }}" id="price" name="price" required>
 
                                         <label><strong>Stock:</strong></label>
-                                        <input class="form-control" type="number" value="{{ $product->stock }}" id="stock" name="stock">
+                                        <input class="form-control" type="number" minlength="1" min="0" value="{{ $product->stock }}" id="stock" name="stock" required>
 
                                         <label><strong>Categoria:</strong></label>
-                                        <input class="form-control" type="number" value="{{ $product->category_id }}" id="category_id" name="category_id">
+                                        <input class="form-control" type="number" minlength="1" min="0" value="{{ $product->category_id }}" id="category_id" name="category_id" required>
 
                                         <label><strong>Imagen:</strong></label>
-                                        <input class="form-control-file" type="file" id="image_path" name="image_path">
+                                        <input class="form-control-file" type="file" value="{{$product->image_path}}" id="image_path" name="image_path" required>
+                                        <div class="invalid-feedback">
+                                            Seleccione una imagen para el producto.
+                                        </div> 
 
                                         <br></br><button type="btn btn-success" class="btn btn-primary">Confirmar</button>
 
                                     </div>
                         </form>
+
+                        <script>
+                                    // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                    (function() {
+                                                'use strict';
+                                                 window.addEventListener('load', function() {
+                                                 // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                                 var forms = document.getElementsByClassName('needs-validation');
+                                                 // Loop over them and prevent submission
+                                                 var validation = Array.prototype.filter.call(forms, function(form) {
+                                                    form.addEventListener('submit', function(event) {
+                                                    if (form.checkValidity() === false) {
+                                                        event.preventDefault();
+                                                        event.stopPropagation();
+                                                    }
+                                                    form.classList.add('was-validated');
+                                                    }, false);
+                                                    });
+                                                }, false);
+                                    })();
+                         </script>
+
+                            @if($errors->any())
+                                <div class="w-4/8 m-auto">
+                                    @foreach ($errors->all() as $error)
+                                        <li class="text-red-500 list-none">
+                                            {{$error}}
+                                        </li>
+                                        
+                                    @endforeach
+                                </div>
+                            @endif
                                                 
                     </div>
                     

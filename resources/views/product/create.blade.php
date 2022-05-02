@@ -5,6 +5,7 @@
 
 @section('content')
 
+
     <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -14,33 +15,71 @@
                         <span class="card-title">Agregar Producto</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('product.crearProducto') }}">
+                        <form class="needs-validation" method="POST" action="{{ route('product.crearProducto') }}" novalidate>
                         {{ csrf_field() }}
                             
                             <div class="form-group row">
   
                                           <label><strong>Nombre:</strong></label>
-                                          <input class="form-control" type="text" id="name" name="name">
+                                          <input class="form-control" type="text" minlength="1" placeholder="Nombre del producto" id="name" name="name" required>                                             
   
                                           <label><strong>Descripcion:</strong></label>
-                                          <input class="form-control" type="text" id="details" name="details">
+                                          <input class="form-control" type="text" minlength="1" placeholder="Descripcion del producto" id="details" name="details" required>                                        
+                                          
   
                                           <label><strong>Precio:</strong></label>
-                                          <input class="form-control" type="number" id="price" name="price">
+                                          <input class="form-control" type="number" minlength="1" min="0" placeholder="Precio del producto" id="price" name="price" required>                          
+                                          
   
                                           <label><strong>Stock:</strong></label>
-                                          <input class="form-control" type="number" id="stock" name="stock">
+                                          <input class="form-control" type="number" minlength="1" min="0" placeholder="Stock del producto" id="stock" name="stock" required>                           
+                                          
   
                                           <label><strong>Categoria:</strong></label>
-                                          <input class="form-control" type="number" id="category_id" name="category_id">
+                                          <input class="form-control" type="number" minlength="1" min="0" placeholder="Categoria del producto" id="category_id" name="category_id" required>                                      
   
                                           <label><strong>Imagen:</strong></label>
-                                          <input class="form-control-file" type="file" id="image_path" name="image_path">
+                                          <input class="form-control-file" type="file" id="image_path" name="image_path" required>
+                                          <div class="invalid-feedback">
+                                            Seleccione una imagen para el producto.
+                                          </div>                                      
   
-                                          <br></br><button type="btn btn-success" class="btn btn-primary">Confirmar</button>
+                                          <br></br><button type="submit" class="btn btn-primary">Confirmar</button>
   
                                       </div>
                           </form>
+
+                          <script>
+                                    // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                    (function() {
+                                                'use strict';
+                                                 window.addEventListener('load', function() {
+                                                 // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                                 var forms = document.getElementsByClassName('needs-validation');
+                                                 // Loop over them and prevent submission
+                                                 var validation = Array.prototype.filter.call(forms, function(form) {
+                                                    form.addEventListener('submit', function(event) {
+                                                    if (form.checkValidity() === false) {
+                                                        event.preventDefault();
+                                                        event.stopPropagation();
+                                                    }
+                                                    form.classList.add('was-validated');
+                                                    }, false);
+                                                    });
+                                                }, false);
+                                    })();
+                         </script>
+
+                            @if($errors->any())
+                                <div class="w-4/8 m-auto">
+                                    @foreach ($errors->all() as $error)
+                                        <li class="text-red-500 list-none">
+                                            {{$error}}
+                                        </li>
+                                        
+                                    @endforeach
+                                </div>
+                            @endif
                     </div>
                 </div>
 

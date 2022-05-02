@@ -13,6 +13,10 @@
                         </div>
                     @endif
 
+                    <div class="card-header">
+                        <span class="card-title">USUARIOS DE BAHIA COMPUTACION</span>
+                    </div> 
+
                     <div class="card-body">           
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">

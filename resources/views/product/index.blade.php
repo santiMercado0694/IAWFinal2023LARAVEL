@@ -13,6 +13,10 @@
                         </div>
                     @endif
 
+                    <div class="card-header">
+                        <span class="card-title">PRODUCTOS DE BAHIA COMPUTACION</span>
+                    </div>
+
                     <div class="card-body">
                         <div class="float-left">
                                 <a href="{{ route('product.crear') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">

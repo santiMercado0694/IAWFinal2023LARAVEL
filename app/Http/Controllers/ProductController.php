@@ -118,6 +118,15 @@ class ProductController extends Controller
 
     public function actualizar(Request $request){
 
+        $request->validate([
+            'name' => 'required',
+            'details' => 'required',
+            'price' => 'required',
+            'stock' => 'required',
+            'category_id' => 'required',
+            'image_path' => 'required'
+        ]);
+
        $product = Product::find($request->id);
        $nombre = $product->name;
        $product->name = $request->name;
@@ -140,10 +149,20 @@ class ProductController extends Controller
 
     public function crearProducto(Request $request){
 
-        $product = Product::create($request->all());
+        $request->validate([
+            'name' => 'required',
+            'details' => 'required',
+            'price' => 'required',
+            'stock' => 'required',
+            'category_id' => 'required',
+            'image_path' => 'required'
+        ]);
+   
+            $product = Product::create($request->all());
 
-        return redirect()->route('products.index')
-            ->with('success', ' El producto ' . $product->name .' se agrego exitosamente');
-     }
+            return redirect()->route('products.index')
+                ->with('success', ' El producto ' . $product->name .' se agrego exitosamente');
+
+        }
 
 }
