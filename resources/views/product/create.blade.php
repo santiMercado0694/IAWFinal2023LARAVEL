@@ -28,7 +28,7 @@
                                           
   
                                           <label><strong>Precio:</strong></label>
-                                          <input class="form-control" type="number" minlength="1" min="0" placeholder="Precio del producto" id="price" name="price" required>                          
+                                          <input class="form-control" type="number" step=any minlength="1" min="0" placeholder="Precio del producto" id="price" name="price" required>                          
                                           
   
                                           <label><strong>Stock:</strong></label>

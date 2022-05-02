@@ -26,7 +26,7 @@
                                         <input class="form-control" type="text" minlength="1" value="{{ $product->details}}" id="details" name="details" required>
 
                                         <label><strong>Precio:</strong></label>
-                                        <input class="form-control" type="number" minlength="1" min="0" value="{{ $product->price }}" id="price" name="price" required>
+                                        <input class="form-control" type="number" step=any minlength="1" min="0" value="{{ $product->price }}" id="price" name="price" required>
 
                                         <label><strong>Stock:</strong></label>
                                         <input class="form-control" type="number" minlength="1" min="0" value="{{ $product->stock }}" id="stock" name="stock" required>
