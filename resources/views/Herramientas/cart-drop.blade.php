@@ -76,12 +76,6 @@
 
         </a>
 
-        <a class="btn btn-dark btn-sm btn-block" href="">
-
-            PAGAR <i class="fa fa-arrow-right"></i>
-
-        </a>
-
     </div>
 
 @else

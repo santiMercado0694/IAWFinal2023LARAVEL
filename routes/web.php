@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -40,6 +41,12 @@ Route::get('create', [ProductController::class, 'crear'])->name('product.crear')
 Route::post('edit', [ProductController::class, 'actualizar'])->name('product.actualizar');
 
 Route::post('create', [ProductController::class, 'crearProducto'])->name('product.crearProducto');
+
+Route::get('/shop', [CartController::class, 'shop'])->name('shop');
+
+Route::get('/users', [UserController::class, 'mostrar'])->name('user.index');
+
+Route::get('delete/{id}', [UserController::class, 'destruir'])->name('user.destruir');
 
 //Route::post('products/{id}/edit', [ProductController::class, 'update'])->name('product.update');
 
