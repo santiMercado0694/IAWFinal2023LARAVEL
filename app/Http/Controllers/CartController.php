@@ -25,7 +25,7 @@ class CartController extends Controller
         $cartCollection = \Cart::getContent();
 
 
-        return view('cart')->withTitle('BAHIA COMPUTACION')->with(['cartCollection' => $cartCollection]);;
+        return view('cart')->withTitle('BAHIA COMPUTACION')->with(['cartCollection' => $cartCollection]);
 
     }
 

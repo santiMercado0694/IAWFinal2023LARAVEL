@@ -33,6 +33,16 @@ Route::post('/clear', [CartController::class, 'clear'])->name('cart.clear');
 
 Route::post('/pagar', [CartController::class, 'pagar'])->name('cart.pagar');
 
+Route::get('edit/{id}', [ProductController::class, 'editar'])->name('product.editar');
+
+Route::get('create', [ProductController::class, 'crear'])->name('product.crear');
+
+Route::post('edit', [ProductController::class, 'actualizar'])->name('product.actualizar');
+
+Route::post('create', [ProductController::class, 'crearProducto'])->name('product.crearProducto');
+
+//Route::post('products/{id}/edit', [ProductController::class, 'update'])->name('product.update');
+
 Route::resource('products', ProductController::class)->middleware(['auth']);
 
 
