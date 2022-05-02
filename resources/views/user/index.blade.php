@@ -14,7 +14,7 @@
                     @endif
 
                     <div class="card-header">
-                        <span class="card-title">USUARIOS DE BAHIA COMPUTACION</span>
+                        <span class="card-title">CLIENTES DE BAHIA COMPUTACION</span>
                     </div> 
 
                     <div class="card-body">           

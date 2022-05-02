@@ -10,7 +10,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'USUARIOS' }}</title>
+    <title>{{ $title ?? 'CLIENTES' }}</title>
 
     <link rel="icon" href="/images/logo.png" type="image/png" sizes="32x32" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
