@@ -15,7 +15,7 @@
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('product.form')
+                            
 
                         </form>
                                                 
