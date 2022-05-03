@@ -40,6 +40,10 @@ class Product extends Model
      */
     protected $fillable = ['name','details','price','stock','category_id','image_path'];
 
+    public function categoria(){
 
+      return $this->hasOne('App\Models\Categoria', 'id', 'category_id');
+
+    }
 
 }

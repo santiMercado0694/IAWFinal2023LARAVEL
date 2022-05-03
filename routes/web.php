@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,20 @@ Route::get('/shop', [CartController::class, 'shop'])->middleware(['auth'])->name
 Route::get('/users', [UserController::class, 'mostrar'])->middleware(['auth'])->name('user.index');
 
 Route::get('delete/{id}', [UserController::class, 'destruir'])->middleware(['auth'])->name('user.destruir');
+
+Route::get('/categorias', [CategoriaController::class, 'mostrar'])->name('categoria.index');
+
+Route::get('/categorias/{id}', [CategoriaController::class, 'show'])->name('categoria.show');
+
+Route::get('crearCategoria', [CategoriaController::class, 'crear'])->name('categoria.crear');
+
+Route::get('editarCategoria/{id}', [CategoriaController::class, 'editar'])->name('categoria.editar');
+
+Route::post('editarCategoria', [CategoriaController::class, 'actualizar'])->name('categoria.actualizar');
+
+Route::post('crearCategoria', [CategoriaController::class, 'crearCategoria'])->name('categoria.crearCategoria');
+
+Route::get('categoria/delete/{id}', [CategoriaController::class, 'destruir'])->name('categoria.destruir');
 
 //Route::post('products/{id}/edit', [ProductController::class, 'update'])->name('product.update');
 

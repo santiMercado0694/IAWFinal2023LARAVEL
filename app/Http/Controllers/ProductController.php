@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
 /**
@@ -19,7 +20,6 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::paginate();
-
         return view('product.index', compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * $products->perPage());
     }
@@ -32,7 +32,8 @@ class ProductController extends Controller
     public function create()
     {
         $product = new Product();
-        return view('product.create', compact('product'));
+        $categorias = Categoria::pluck('nombre', 'id');
+        return view('product.create', compact('product', 'categorias'));
     }
 
     /**
@@ -111,9 +112,9 @@ class ProductController extends Controller
     public function editar($id)
     {
         $product = Product::find($id);
-        
+        $categorias = Categoria::all();
 
-        return view('product.edit')->with(['product' => $product]);
+        return view('product.edit')->with(['product' => $product , 'categorias' => $categorias]);
     }
 
     public function actualizar(Request $request){
@@ -144,7 +145,9 @@ class ProductController extends Controller
     public function crear()
     {
         $product = new Product();
-        return view('product.create')->with(['product' => $product]);
+        $categorias = Categoria::all();
+        
+        return view('product.create', compact('product', 'categorias'));
     }
 
     public function crearProducto(Request $request){

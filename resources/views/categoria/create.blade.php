@@ -1,4 +1,4 @@
-@extends('Plantillas.appAdmin')
+@extends('Plantillas.appCategoria')
 
 <br></br>
 
@@ -12,44 +12,16 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Agregar Producto</span>
+                        <span class="card-title">Crear Categoria</span>
                     </div>
                     <div class="card-body">
-                        <form class="needs-validation" method="POST" action="{{ route('product.crearProducto') }}" novalidate>
+                        <form class="needs-validation" method="POST" action="{{ route('categoria.crearCategoria') }}" novalidate>
                         {{ csrf_field() }}
                             
-                            <div class="form-group row">
+                            <div class="form-group row">                                          
   
                                           <label><strong>Nombre:</strong></label>
-                                          <input class="form-control" type="text" minlength="1" placeholder="Nombre del producto" id="name" name="name" required>                                             
-  
-                                          <label><strong>Descripcion:</strong></label>
-                                          <input class="form-control" type="text" minlength="1" placeholder="Descripcion del producto" id="details" name="details" required>                                        
-                                          
-  
-                                          <label><strong>Precio:</strong></label>
-                                          <input class="form-control" type="number" step=any minlength="1" min="0" placeholder="Precio del producto" id="price" name="price" required>                          
-                                          
-  
-                                          <label><strong>Stock:</strong></label>
-                                          <input class="form-control" type="number" minlength="1" min="0" placeholder="Stock del producto" id="stock" name="stock" required>                           
-                                                                              
-                                          
-                                            <label><strong>Categoria:</strong></label>
-
-                                            <select class="form-control" placeholder="Categoria del producto" id="category_id" name="category_id" required>                                                                             
-                                              @foreach ($categorias as $categoria )
-                                                 <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option> 
-                                              @endforeach  
-                                                
-                                            </select>
-                                 
-
-                                          <label><strong>Imagen:</strong></label>
-                                          <input class="form-control-file" type="file" id="image_path" name="image_path" required>
-                                          <div class="invalid-feedback">
-                                            Seleccione una imagen para el producto.
-                                          </div>                                      
+                                          <input class="form-control" type="text" minlength="1" placeholder="Nombre de la categoria" id="nombre" name="nombre" required>                                                                            
   
                                           <br></br><button type="submit" class="btn btn-primary">Confirmar</button>
   
@@ -95,7 +67,7 @@
 
                 <div class="float-right">
 
-                    <a class="btn btn-success" href="{{ route('products.index') }}"> Volver</a>
+                    <a class="btn btn-success" href="{{ route('categoria.index') }}"> Volver</a>
 
                 </div>
 

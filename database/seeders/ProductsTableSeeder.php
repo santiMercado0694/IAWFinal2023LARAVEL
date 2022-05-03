@@ -38,7 +38,7 @@ class ProductsTableSeeder extends Seeder
             'details' => '6.1 pulgadas, 64GB 4GB RAM',
             'price' => 649.99,
             'stock' => 8,   
-            'category_id' => 2,
+            'category_id' => 1,
             'image_path' => 'iphone-11-pro.png'
         ]);
 
@@ -47,7 +47,7 @@ class ProductsTableSeeder extends Seeder
             'details' => '6.1 pulgadas, 64GB 4GB RAM',
             'price' => 8.99,
             'stock' => 10,
-            'category_id' => 3,      
+            'category_id' => 1,      
             'image_path' => 'remax-610d.jpg'
         ]);
 
@@ -56,7 +56,7 @@ class ProductsTableSeeder extends Seeder
             'details' => '24 pulgadas, LED Display, Resolución 1366 x 768',
             'price' => 41.99,
             'stock' => 0,
-            'category_id' => 4,
+            'category_id' => 1,
             'image_path' => 'samsung-led-24.png'
         ]);
 
@@ -65,7 +65,7 @@ class ProductsTableSeeder extends Seeder
             'details' => '16.1MP, 5x Optical Zoom',
             'price' => 144.99,
             'stock' => 2,
-            'category_id' => 5,
+            'category_id' => 1,
             'image_path' => 'samsung-mv800.jpg'
         ]);
 
@@ -74,7 +74,7 @@ class ProductsTableSeeder extends Seeder
             'details' => '5.5 pulgadas, 32GB 4GB RAM',
             'price' => 148.99,
             'stock' => 7,
-            'category_id' => 2,
+            'category_id' => 1,
             'image_path' => 'gr5-2017.jpg'
         ]);
 

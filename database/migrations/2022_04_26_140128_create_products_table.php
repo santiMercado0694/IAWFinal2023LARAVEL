@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -19,9 +19,10 @@ return new class extends Migration
             $table->string('details')->nullable();
             $table->double('price');
             $table->integer('stock');       
-            $table->integer('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('image_path');
             $table->timestamps();
+            $table->foreign('category_id')->references('id')->on('categorias')->ondelete('cascade');
         });
 
     }

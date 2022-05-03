@@ -1,4 +1,4 @@
-@extends('Plantillas.appAdmin')
+@extends('Plantillas.appCategoria')
 
 <br></br>
 
@@ -14,13 +14,13 @@
                     @endif
 
                     <div class="card-header">
-                        <span class="card-title">PRODUCTOS DE BAHIA COMPUTACION</span>
+                        <span class="card-title">CATEGORIA DE PRODUCTOS DE BAHIA COMPUTACION</span>
                     </div>
 
                     <div class="card-body">
                         <div class="float-left">
-                                <a href="{{ route('product.crear') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Agregar Producto') }}
+                                <a href="{{ route('categoria.crear') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('Crear Categoria') }}
                                 </a>
                         </div>
                     </div>
@@ -32,34 +32,20 @@
                                     <tr>
                                         <th>Nro</th>
                                         
-										<th>Nombre</th>
-										<th>Descripcion</th>
-										<th>Precio</th>
-										<th>Stock</th>
-										<th>Categoria</th>
-										<th>Imagen</th>
+										<th>Nombre</th>									
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($products as $product)
+                                    @foreach ($categorias as $categoria)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $product->name }}</td>
-											<td>{{ $product->details }}</td>
-											<td>${{ $product->price }}</td>
-											<td>{{ $product->stock }}</td>
-											<td>{{ $product->categoria->nombre }}</td>
-											<td><img src="/images/{{ $product->image_path }}" style="height: 100px; width: 100px;display: block;" alt="{{ $product->image_path }}"></td>
-
-                                            <td>
-                                                <form action="{{ route('products.destroy',$product->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('products.show',$product->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('product.editar',$product->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
-                                                    @csrf
-                                                    @method('DELETE')
+											<td>{{ $categoria->nombre }}</td>
+                                            <td>  <form action="{{ route('categoria.destruir',$categoria->id) }}" method="GET">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('categoria.show',$categoria->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('categoria.editar',$categoria->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
@@ -70,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $products->links() !!}
+                {!! $categorias->links() !!}
             </div>
         </div>
     </div>

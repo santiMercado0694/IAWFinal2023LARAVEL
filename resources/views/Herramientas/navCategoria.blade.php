@@ -28,7 +28,7 @@
 
             <li class="nav-item">
 
-                <a class="nav-link" href="{{ route('categoria.index') }}">CATEGORIAS</a>
+                <a class="nav-link" href="{{ route('user.index') }}">CLIENTES</a>
 
             </li>
 

@@ -28,6 +28,12 @@
 
             <li class="nav-item">
 
+                <a class="nav-link" href="{{ route('categoria.index') }}">CATEGORIAS</a>
+
+            </li>
+
+            <li class="nav-item">
+
                 <a class="nav-link" href="{{ route('shop') }}">PAGINA PRINCIPAL</a>
 
             </li>

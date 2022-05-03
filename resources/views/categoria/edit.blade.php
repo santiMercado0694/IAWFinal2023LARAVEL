@@ -1,4 +1,4 @@
-@extends('Plantillas.appAdmin')
+@extends('Plantillas.appCategoria')
 
 <br></br>
 
@@ -12,43 +12,21 @@
                         <span class="card-title">Editar Producto</span>
                     </div>               
                     <div class="card-body">
-                        <form class="needs-validation"  action="{{ route('product.actualizar')}}" method="POST" novalidate>
-                          {{ csrf_field() }}
+                    <form class="needs-validation" method="POST" action="{{ route('categoria.actualizar') }}" novalidate>
+                        {{ csrf_field() }}
                             
-                          <div class="form-group row">
+                            <div class="form-group row">
+                                
+                                          <input type="hidden" value="{{ $categoria->id}}" id="id" name="id" >
+  
+                                          <label><strong>Nombre:</strong></label>
+                                          <input class="form-control" type="text" minlength="1" value="{{$categoria->nombre}}" placeholder="Nombre de la categoria" id="nombre" name="nombre" required>                                                                            
+  
+                                          <br></br><button type="submit" class="btn btn-primary">Confirmar</button>
+  
+                             </div>
 
-                                        <input type="hidden" value="{{ $product->id}}" id="id" name="id" >
-
-                                        <label><strong>Nombre:</strong></label>
-                                        <input class="form-control" type="text" minlength="1" value="{{ $product->name}}" id="name" name="name" required>
-
-                                        <label><strong>Descripcion:</strong></label>
-                                        <input class="form-control" type="text" minlength="1" value="{{ $product->details}}" id="details" name="details" required>
-
-                                        <label><strong>Precio:</strong></label>
-                                        <input class="form-control" type="number" step=any minlength="1" min="0" value="{{ $product->price }}" id="price" name="price" required>
-
-                                        <label><strong>Stock:</strong></label>
-                                        <input class="form-control" type="number" minlength="1" min="0" value="{{ $product->stock }}" id="stock" name="stock" required>
-
-                                        <label><strong>Categoria:</strong></label>
-                                        <select class="form-control" placeholder="Categoria del producto" id="category_id" name="category_id" required>                                                                                
-                                              @foreach ($categorias as $categoria )
-                                                 <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option> 
-                                              @endforeach  
-                                                
-                                            </select>
-
-                                        <label><strong>Imagen:</strong></label>
-                                        <input class="form-control-file" type="file" value="{{$product->image_path}}" id="image_path" name="image_path" required>
-                                        <div class="invalid-feedback">
-                                            Seleccione una imagen para el producto.
-                                        </div> 
-
-                                        <br></br><button type="btn btn-success" class="btn btn-primary">Confirmar</button>
-
-                                    </div>
-                        </form>
+                          </form>
 
                         <script>
                                     // Example starter JavaScript for disabling form submissions if there are invalid fields
