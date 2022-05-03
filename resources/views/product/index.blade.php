@@ -51,7 +51,11 @@
 											<td>{{ $product->details }}</td>
 											<td>${{ $product->price }}</td>
 											<td>{{ $product->stock }}</td>
-											<td>{{ $product->categoria->nombre }}</td>
+                                                @if(is_null($product->categoria->nombre))
+											        <td>Sin categoria</td>
+                                                 @else
+                                                    <td>{{ $product->categoria->nombre }}</td>
+                                                @endif
 											<td><img src="/images/{{ $product->image_path }}" style="height: 100px; width: 100px;display: block;" alt="{{ $product->image_path }}"></td>
 
                                             <td>

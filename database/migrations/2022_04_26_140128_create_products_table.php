@@ -14,15 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
+            $table->engine="InnoDB";
             $table->id();
             $table->string('name')->unique();
             $table->string('details')->nullable();
             $table->double('price');
             $table->integer('stock');       
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->string('image_path');
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('categorias')->ondelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categorias')->onDelete('cascade');
         });
 
     }
