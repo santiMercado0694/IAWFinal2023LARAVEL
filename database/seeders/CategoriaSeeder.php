@@ -16,7 +16,7 @@ class CategoriaSeeder extends Seeder
     public function run()
     {
         Categoria::create([ 
-            'nombre' => 'Electronica'          
+            'nombre' => 'Sin categoria'          
         ]);
     }
 }
