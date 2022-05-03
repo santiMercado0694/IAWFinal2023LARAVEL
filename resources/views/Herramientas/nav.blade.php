@@ -44,9 +44,12 @@
                 <li class="nav-item">
 
                     <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">CERRAR SESION</a>
+                    
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-		            </form>
+                    
+                        @csrf
+		            
+                    </form>
 
                 </li>
              

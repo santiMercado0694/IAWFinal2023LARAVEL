@@ -17,6 +17,8 @@ use App\Http\Controllers\CategoriaController;
 |
 */
 
+//Rutas del carrito
+
 Route::get('/', [CartController::class, 'shop'])->name('shop');
 
 Route::get('/shop', [CartController::class, 'shop'])->name('shop');
@@ -35,6 +37,9 @@ Route::post('/clear', [CartController::class, 'clear'])->middleware(['auth'])->n
 
 Route::post('/pagar', [CartController::class, 'pagar'])->middleware(['auth'])->name('cart.pagar');
 
+
+//Rutas del crud producto
+
 Route::get('edit/{id}', [ProductController::class, 'editar'])->middleware(['auth'])->name('product.editar');
 
 Route::get('create', [ProductController::class, 'crear'])->middleware(['auth'])->name('product.crear');
@@ -43,11 +48,17 @@ Route::post('edit', [ProductController::class, 'actualizar'])->middleware(['auth
 
 Route::post('create', [ProductController::class, 'crearProducto'])->middleware(['auth'])->name('product.crearProducto');
 
-Route::get('/shop', [CartController::class, 'shop'])->middleware(['auth'])->name('shop');
+Route::resource('products', ProductController::class)->middleware(['auth']);
+
+
+//Rutas del crud de usuarios
 
 Route::get('/users', [UserController::class, 'mostrar'])->middleware(['auth'])->name('user.index');
 
 Route::get('delete/{id}', [UserController::class, 'destruir'])->middleware(['auth'])->name('user.destruir');
+
+
+//Rutas del crud de categorias
 
 Route::get('/categorias', [CategoriaController::class, 'mostrar'])->name('categoria.index');
 
@@ -62,12 +73,6 @@ Route::post('editarCategoria', [CategoriaController::class, 'actualizar'])->name
 Route::post('crearCategoria', [CategoriaController::class, 'crearCategoria'])->name('categoria.crearCategoria');
 
 Route::get('categoria/delete/{id}', [CategoriaController::class, 'destruir'])->name('categoria.destruir');
-
-//Route::post('products/{id}/edit', [ProductController::class, 'update'])->name('product.update');
-
-Route::resource('products', ProductController::class)->middleware(['auth']);
-
-
 
 
 require __DIR__.'/auth.php';

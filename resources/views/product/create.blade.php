@@ -7,14 +7,21 @@
 
 
     <section class="content container-fluid">
+
         <div class="row">
+
             <div class="col-md-12">
 
                 <div class="card card-default">
+
                     <div class="card-header">
+
                         <span class="card-title">Agregar Producto</span>
+
                     </div>
+
                     <div class="card-body">
+
                         <form class="needs-validation" method="POST" action="{{ route('product.crearProducto') }}" novalidate>
                         {{ csrf_field() }}
                             
@@ -37,7 +44,8 @@
                                           
                                             <label><strong>Categoria:</strong></label>
 
-                                            <select class="form-control" placeholder="Categoria del producto" id="category_id" name="category_id" required>                                                                             
+                                            <select class="form-control" placeholder="Categoria del producto" id="category_id" name="category_id" required>  
+
                                               @foreach ($categorias as $categoria )
                                                  <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option> 
                                               @endforeach  
@@ -57,13 +65,13 @@
                           </form>
 
                           <script>
-                                    // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                    
                                     (function() {
                                                 'use strict';
                                                  window.addEventListener('load', function() {
-                                                 // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                                
                                                  var forms = document.getElementsByClassName('needs-validation');
-                                                 // Loop over them and prevent submission
+                                                 
                                                  var validation = Array.prototype.filter.call(forms, function(form) {
                                                     form.addEventListener('submit', function(event) {
                                                     if (form.checkValidity() === false) {
@@ -78,16 +86,25 @@
                          </script>
 
                             @if($errors->any())
+
                                 <div class="w-4/8 m-auto">
+
                                     @foreach ($errors->all() as $error)
+
                                         <li class="text-red-500 list-none">
+
                                             {{$error}}
+
                                         </li>
                                         
                                     @endforeach
+
                                 </div>
+
                             @endif
+
                     </div>
+
                 </div>
 
                 <br></br>
@@ -100,6 +117,9 @@
                 </div>
 
             </div>
+
         </div>
+
     </section>
+    
 @endsection

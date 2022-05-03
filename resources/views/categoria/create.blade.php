@@ -5,16 +5,22 @@
 
 @section('content')
 
-
     <section class="content container-fluid">
+
         <div class="row">
+
             <div class="col-md-12">
 
                 <div class="card card-default">
+
                     <div class="card-header">
+
                         <span class="card-title">Crear Categoria</span>
+
                     </div>
+
                     <div class="card-body">
+
                         <form class="needs-validation" method="POST" action="{{ route('categoria.crearCategoria') }}" novalidate>
                         {{ csrf_field() }}
                             
@@ -50,16 +56,25 @@
                          </script>
 
                             @if($errors->any())
+
                                 <div class="w-4/8 m-auto">
+
                                     @foreach ($errors->all() as $error)
+
                                         <li class="text-red-500 list-none">
+
                                             {{$error}}
+
                                         </li>
                                         
                                     @endforeach
+                                    
                                 </div>
+
                             @endif
+
                     </div>
+
                 </div>
 
                 <br></br>
@@ -72,6 +87,9 @@
                 </div>
 
             </div>
+
         </div>
+
     </section>
+    
 @endsection
