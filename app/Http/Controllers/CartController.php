@@ -66,9 +66,6 @@ class CartController extends Controller
     
         }
 
-
-
-
     public function cart()  {
 
         $cartCollection = \Cart::getContent();
@@ -83,7 +80,7 @@ class CartController extends Controller
         $cartCollection = \Cart::getContent();
 
 
-        return view('buy')->withTitle('BAHIA COMPUTACION')->with(['cartCollection' => $cartCollection]);;
+        return view('buy')->withTitle('BAHIA COMPUTACION')->with(['cartCollection' => $cartCollection]);
 
     }
 
@@ -162,6 +159,7 @@ class CartController extends Controller
     public function pagar(){
     
         $carrito = \Cart::getContent();
+        $total = \Cart::getTotal();
 
         foreach($carrito as $producto){
    
@@ -174,10 +172,8 @@ class CartController extends Controller
 
         \Cart::clear();
 
-        /*return redirect()->route('cart.buy')
-            ->with('success', ' El producto ' . $request->name .' se edito exitosamente');*/
-
-            return redirect()->route('shop');
+            return view('resumenProducto')->withTitle('BAHIA COMPUTACION')->with(['carrito' => $carrito , 'total' => $total]);
 
     }
+
 }

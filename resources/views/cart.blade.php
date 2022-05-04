@@ -109,8 +109,6 @@
 
                                 <b>En Stock: </b>{{ $item->attributes->stock }}<br>
 
-                                {{--                                <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }}--}}
-
                             </p>
 
                         </div>

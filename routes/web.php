@@ -31,6 +31,8 @@ Route::get('/shop/filtro', [CartController::class, 'buscar'])->name('cart.buscar
 
 Route::get('/buy', [CartController::class, 'buy'])->middleware(['auth'])->name('buy');
 
+Route::get('/resumen', [CartController::class, 'pagar'])->middleware(['auth'])->name('cart.pagar');
+
 Route::post('/add', [CartController::class, 'add'])->middleware(['auth'])->middleware(['auth'])->name('cart.store');
 
 Route::post('/update', [CartController::class, 'update'])->middleware(['auth'])->name('cart.update');
@@ -38,9 +40,6 @@ Route::post('/update', [CartController::class, 'update'])->middleware(['auth'])-
 Route::post('/remove', [CartController::class, 'remove'])->middleware(['auth'])->name('cart.remove');
 
 Route::post('/clear', [CartController::class, 'clear'])->middleware(['auth'])->name('cart.clear');
-
-Route::post('/pagar', [CartController::class, 'pagar'])->middleware(['auth'])->name('cart.pagar');
-
 
 //Rutas del crud producto
 

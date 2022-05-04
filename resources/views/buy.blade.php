@@ -88,7 +88,7 @@
 
                     </div>
 
-                    <form action="{{ route('cart.pagar') }}" method="POST">
+                    <form action="{{ route('cart.pagar') }}" method="GET">
 
                         {{ csrf_field() }}
 
