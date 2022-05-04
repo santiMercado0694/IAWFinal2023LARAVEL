@@ -38,7 +38,7 @@ class Product extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','details','price','stock','category_id','image_path'];
+    protected $fillable = ['name','details','description','price','stock','category_id','image_path'];
 
     public function categoria(){
 

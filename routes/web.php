@@ -25,11 +25,13 @@ Route::get('/shop', [CartController::class, 'shop'])->name('shop');
 
 Route::get('/shopF', [CartController::class, 'shopF'])->name('shopF');
 
+Route::get('/shop/{id}', [CartController::class, 'detallado'])->name('detallado');
+
 Route::get('/cart', [CartController::class, 'cart'])->middleware(['auth'])->name('cart.index');
 
 Route::get('/shop', [CartController::class, 'filtro'])->name('cart.shopFiltro');
 
-Route::get('/shop/filtro', [CartController::class, 'buscar'])->name('cart.buscar');
+Route::get('/filtro', [CartController::class, 'buscar'])->name('cart.buscar');
 
 Route::get('/buy', [CartController::class, 'buy'])->middleware(['auth'])->name('buy');
 

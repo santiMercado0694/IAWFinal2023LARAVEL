@@ -34,6 +34,16 @@ class CartController extends Controller
 
     }
 
+    public function detallado($id)
+
+    {
+
+        $product = Product::find($id);
+
+        return view('productoDetallado')->withTitle('BAHIA COMPUTACION')->with(['product' => $product ]);
+
+    }
+
     public function buscar(Request $request){
 
         $name = $request->get('name');
@@ -85,7 +95,6 @@ class CartController extends Controller
 
         $cartCollection = \Cart::getContent();
 
-
         return view('cart')->withTitle('BAHIA COMPUTACION')->with(['cartCollection' => $cartCollection]);
 
     }
@@ -110,6 +119,19 @@ class CartController extends Controller
 
     public function add(Request $request){
 
+        $carrito = \Cart::getContent();
+        $i = 0;
+
+        foreach($carrito as $item){
+        
+            if($item->id === $request->id){
+                $i++;
+            }
+        
+        }
+
+        if($i == 0){
+
         \Cart::add(array(
 
             'id' => $request->id,
@@ -131,6 +153,10 @@ class CartController extends Controller
         ));
 
         return redirect()->route('cart.index')->with('success_msg', 'Producto Agregado a sú Carrito!');
+
+     }
+     else
+            return redirect()->route('cart.index')->with('alert_msg', 'El producto '.$request->name.' ya estaba en tu carrito');;
 
     }
 

@@ -44,7 +44,7 @@ class ProductsTableSeeder extends Seeder
 
         Product::create([
             'name' => 'Remax 610D Headset',
-            'details' => '6.1 pulgadas, 64GB 4GB RAM',
+            'details' => 'Auricualres ideales para escuchar musica',
             'price' => 8.99,
             'stock' => 10,
             'category_id' => 1,      

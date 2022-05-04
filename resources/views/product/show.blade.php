@@ -23,8 +23,15 @@
 
                         <div class="form-group">
 
-                            <strong>Descripcion:</strong>
+                            <strong>Detalle:</strong>
                             {{ $product->details }}
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <strong>Descripcion:</strong>
+                            {{ $product->description }}
 
                         </div>
 

@@ -142,7 +142,7 @@
 
                                 <div class="card-body">
 
-                                    <a href=""><h6 class="card-title">{{ $pro->name }}</h6></a>
+                                    <a href="{{ route('detallado',$pro->id) }}"><h6 class="card-title">{{ $pro->name }}</h6></a>
 
                                     <p>${{ $pro->price }}</p>
 

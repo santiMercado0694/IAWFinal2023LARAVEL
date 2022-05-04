@@ -30,8 +30,11 @@
                                         <label><strong>Nombre:</strong></label>
                                         <input class="form-control" type="text" minlength="1" value="{{ $product->name}}" id="name" name="name" required>
 
+                                        <label><strong>Detalle:</strong></label>
+                                        <input class="form-control" type="text" value="{{ $product->details}}" id="details" name="details" >
+
                                         <label><strong>Descripcion:</strong></label>
-                                        <input class="form-control" type="text" minlength="1" value="{{ $product->details}}" id="details" name="details" required>
+                                        <textarea class="form-control" type="textarea"  id="description" name="description" >{{$product->description}}</textarea>
 
                                         <label><strong>Precio:</strong></label>
                                         <input class="form-control" type="number" step=any minlength="1" min="0" value="{{ $product->price }}" id="price" name="price" required>

@@ -101,7 +101,7 @@
 
                             <p>
 
-                                <b><a href="">{{ $item->name }}</a></b><br>
+                                <b><a href="{{ route('detallado',$item->id) }}">{{ $item->name }}</a></b><br>
 
                                 <b>Precio: </b>${{ $item->price }}<br>
 

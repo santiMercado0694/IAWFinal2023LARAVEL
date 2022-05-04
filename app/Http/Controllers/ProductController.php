@@ -36,7 +36,6 @@ class ProductController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'details' => 'required',
             'price' => 'required',
             'stock' => 'required',
             'category_id' => 'required',
@@ -82,8 +81,7 @@ class ProductController extends Controller
     public function actualizar(Request $request){
 
         $request->validate([
-            'name' => 'required',
-            'details' => 'required',
+            'name' => 'required',      
             'price' => 'required',
             'stock' => 'required',
             'category_id' => 'required',
@@ -93,7 +91,8 @@ class ProductController extends Controller
        $product = Product::find($request->id);
        $nombre = $product->name;
        $product->name = $request->name;
-       $product->details = $request->details; 
+       $product->details = $request->details;
+       $product->description = $request->description; 
        $product->price = $request->price; 
        $product->stock = $request->stock; 
        $product->category_id = $request->category_id;

@@ -17,7 +17,8 @@ return new class extends Migration
             $table->engine="InnoDB";
             $table->id();
             $table->string('name')->unique();
-            $table->string('details')->nullable();
+            $table->text('details')->nullable();
+            $table->text('description')->nullable();
             $table->double('price');
             $table->integer('stock');       
             $table->unsignedBigInteger('category_id')->nullable();

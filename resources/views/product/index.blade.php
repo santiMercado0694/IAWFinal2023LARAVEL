@@ -53,7 +53,8 @@
                                     <tr>
                                         <th>Nro</th>                                       
 										<th>Nombre</th>
-										<th>Descripcion</th>
+										<th>Detalle</th>
+                                        <th>Descripcion</th>
 										<th>Precio</th>
 										<th>Stock</th>
 										<th>Categoria</th>
@@ -76,6 +77,7 @@
                                             
 											<td>{{ $product->name }}</td>
 											<td>{{ $product->details }}</td>
+                                            <td WIDTH="585" HEIGHT="100">{{ $product->description }}</td>
 											<td>${{ $product->price }}</td>
 											<td>{{ $product->stock }}</td>
                                             <td>{{ $product->categoria->nombre }}</td>                                           
