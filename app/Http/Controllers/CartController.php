@@ -39,7 +39,7 @@ class CartController extends Controller
         $name = $request->get('name');
         $categorias = Categoria::all();
         $products = Product::select("*")
-                            ->where('name', 'LIKE', '%'.$name.'%')
+                            ->where('name', 'ILIKE', '%'.$name.'%')
                             ->get();
                             
 
