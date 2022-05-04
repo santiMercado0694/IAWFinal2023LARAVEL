@@ -1,4 +1,4 @@
-@extends('Plantillas.app')
+@extends('Plantillas.appShop')
 
 @section('content')
 
@@ -203,6 +203,8 @@
                     @endforeach
 
                 </div>
+
+                @yield('link')
 
             </div>
 

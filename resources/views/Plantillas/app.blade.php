@@ -10,7 +10,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'BAHIA COMPUTACION' }}</title>
+    @yield('titulo')
 
     <link rel="icon" href="/images/logo.png" type="image/png"  >
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -28,7 +28,7 @@
 
 <div id="app">
 
-    @include('Herramientas.nav')
+    @yield('nav')
 
     <main class="py-4">
 

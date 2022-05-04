@@ -14,7 +14,7 @@ class CategoriaController extends Controller
      */
     public function mostrar()
     {
-        $categorias = Categoria::paginate();
+        $categorias = Categoria::paginate(8);
 
         return view('categoria.index', compact('categorias'))
             ->with('i', (request()->input('page', 1) - 1) * $categorias->perPage());

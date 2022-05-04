@@ -4,7 +4,7 @@
 
         <li class="nav-item">
 
-            <a class="nav-link" href="{{ route('products.index') }}">PRODUCTOS</a>
+            <a class="nav-link" href="{{ route('user.index') }}">CLIENTES</a>
 
         </li>
 

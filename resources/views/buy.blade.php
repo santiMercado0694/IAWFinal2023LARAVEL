@@ -1,4 +1,4 @@
-@extends('Plantillas.app')
+@extends('Plantillas.appShop')
 
 @section('content')
 

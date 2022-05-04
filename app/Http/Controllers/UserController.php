@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function mostrar(){
 
-        $usuarios = User::paginate();
+        $usuarios = User::paginate(6);
 
         return view('user.index', compact('usuarios'))
             ->with('i', (request()->input('page', 1) - 1) * $usuarios->perPage());

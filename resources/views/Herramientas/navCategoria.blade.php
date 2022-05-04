@@ -1,67 +1,17 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark shadow-sm">
+@extends('Herramientas.navAdmin')
 
-    <div class="container">
+@section('items')
 
-        <a class="navbar-brand" href="{{ route('products.index') }}">
+        <li class="nav-item">
 
-            BAHIA COMPUTACION | ADMINISTRACION
+            <a class="nav-link" href="{{ route('products.index') }}">PRODUCTOS</a>
 
-        </a>
+        </li>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <li class="nav-item">
 
-            <span class="navbar-toggler-icon"></span>
+            <a class="nav-link" href="{{ route('user.index') }}">CLIENTES</a>
 
-        </button>
+        </li>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <ul class="navbar-nav ml-auto">
-
-             @if (Auth::check())
-
-             <li class="nav-item">
-
-                <a class="nav-link" href="{{ route('products.index') }}">PRODUCTOS</a>
-
-            </li>
-
-            <li class="nav-item">
-
-                <a class="nav-link" href="{{ route('user.index') }}">CLIENTES</a>
-
-            </li>
-
-            <li class="nav-item">
-
-                <a class="nav-link" href="{{ route('shop') }}">PAGINA PRINCIPAL</a>
-
-            </li>
-
-                <li class="nav-item">
-
-                    <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">CERRAR SESION</a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-
-                        @csrf
-                        
-		            </form>
-
-                </li>
-
-                
-
-                    @endif
-
-                    </div>
-
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</nav>
+@endsection

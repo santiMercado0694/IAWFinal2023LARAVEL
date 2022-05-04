@@ -3,7 +3,7 @@
     <div class="container">
 
         <a class="navbar-brand" href="{{ url('/') }}">
-
+            
             BAHIA COMPUTACION
 
         </a>
