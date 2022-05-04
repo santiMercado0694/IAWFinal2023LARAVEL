@@ -2,12 +2,12 @@
 
 @section('titulo')
 
-<title>{{ $title ?? 'BAHIA COMPUTACION' }}</title>
+        <title>{{ $title ?? 'BAHIA COMPUTACION' }}</title>
 
 @endsection
 
 @section('nav')
 
-    @include('Herramientas.nav')
+        @include('Herramientas.nav')
 
 @endsection
