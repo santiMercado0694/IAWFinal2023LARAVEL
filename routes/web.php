@@ -63,19 +63,19 @@ Route::get('delete/{id}', [UserController::class, 'destruir'])->middleware(['aut
 
 //Rutas del crud de categorias
 
-Route::get('/categorias', [CategoriaController::class, 'mostrar'])->name('categoria.index');
+Route::get('/categorias', [CategoriaController::class, 'mostrar'])->middleware(['auth'])->name('categoria.index');
 
-Route::get('/categorias/{id}', [CategoriaController::class, 'show'])->name('categoria.show');
+Route::get('/categorias/{id}', [CategoriaController::class, 'show'])->middleware(['auth'])->name('categoria.show');
 
-Route::get('crearCategoria', [CategoriaController::class, 'crear'])->name('categoria.crear');
+Route::get('crearCategoria', [CategoriaController::class, 'crear'])->middleware(['auth'])->name('categoria.crear');
 
-Route::get('editarCategoria/{id}', [CategoriaController::class, 'editar'])->name('categoria.editar');
+Route::get('editarCategoria/{id}', [CategoriaController::class, 'editar'])->middleware(['auth'])->name('categoria.editar');
 
-Route::post('editarCategoria', [CategoriaController::class, 'actualizar'])->name('categoria.actualizar');
+Route::post('editarCategoria', [CategoriaController::class, 'actualizar'])->middleware(['auth'])->name('categoria.actualizar');
 
-Route::post('crearCategoria', [CategoriaController::class, 'crearCategoria'])->name('categoria.crearCategoria');
+Route::post('crearCategoria', [CategoriaController::class, 'crearCategoria'])->middleware(['auth'])->name('categoria.crearCategoria');
 
-Route::get('categoria/delete/{id}', [CategoriaController::class, 'destruir'])->name('categoria.destruir');
+Route::get('categoria/delete/{id}', [CategoriaController::class, 'destruir'])->middleware(['auth'])->name('categoria.destruir');
 
 
 require __DIR__.'/auth.php';
