@@ -75,23 +75,46 @@
         @endif
 
 
+        <nav class="navbar navbar-light bg-light">
+
+             <a class="navbar-brand">Nuestros Productos</a>
+
+                <form class="form-inline" action="{{ route('cart.shopFiltro') }}" method="GET">
+
+                <label for="category_id" style="margin: 10px">Ordenar por:</label>
+                <select class="custom-select" id="category_id" name="category_id" style="width:200px; height:40px;" >
+
+                            <option value="0">Todos los productos</option>
+                            <option value="100000">A-Z</option>
+                            <option value="100001">Z-A</option>
+
+                    @foreach ($categorias as $categoria )
+
+                        @if(strcmp($categoria->nombre, 'Sin categoria') !== 0)
+                        
+                            <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option> 
+                        
+                        @endif
+
+                    @endforeach  
+
+                </select>
+                
+                    <button type="submit" class="btn btn-info" style="margin: 10px"><i class="fa fa-fw fa-eye"></i>Filtrar</button>
+
+                </form>
+
+        </nav>
+
         <div class="row justify-content-center">
 
             <div class="col-lg-12">
 
-                <div class="row">
-
-                    <div class="col-lg-7">
-
-                        <h4>Nuestros Productos</h4>
-
-                    </div>
-
-                </div>
-
                 <hr>
 
                 <div class="row">
+
+                
 
                     @foreach($products as $pro)
 

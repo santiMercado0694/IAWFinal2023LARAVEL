@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Categoria;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 
@@ -13,11 +14,44 @@ class CartController extends Controller
     {
 
         $products = Product::all();
+        $categorias = Categoria::all();
 
-
-        return view('shop')->withTitle('BAHIA COMPUTACION')->with(['products' => $products]);
+        return view('shop')->withTitle('BAHIA COMPUTACION')->with(['products' => $products , 'categorias' => $categorias]);
 
     }
+
+    public function filtro(Request $request){
+
+        $categorias = Categoria::all();
+
+            if($request->category_id == 0){
+
+                $products = Product::all();
+            }
+            elseif($request->category_id == 100000){
+
+
+                $products = Product::all()->sortBy("name");
+
+            }
+            elseif($request->category_id == 100001){
+
+
+                $products = Product::all()->sortByDesc("name");
+
+            }
+            else
+             {
+
+                $products = Product::select("*")
+                ->whereIn('category_id', $request)
+                ->get();
+
+             }
+                       
+            return view('shop')->withTitle('BAHIA COMPUTACION')->with(['products' => $products , 'categorias' => $categorias]);
+    
+        }
 
 
     public function cart()  {
