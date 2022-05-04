@@ -27,6 +27,8 @@ Route::get('/cart', [CartController::class, 'cart'])->middleware(['auth'])->name
 
 Route::get('/shop', [CartController::class, 'filtro'])->name('cart.shopFiltro');
 
+Route::get('/shop/filtro', [CartController::class, 'buscar'])->name('cart.buscar');
+
 Route::get('/buy', [CartController::class, 'buy'])->middleware(['auth'])->name('buy');
 
 Route::post('/add', [CartController::class, 'add'])->middleware(['auth'])->middleware(['auth'])->name('cart.store');

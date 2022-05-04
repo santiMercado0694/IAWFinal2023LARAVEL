@@ -79,6 +79,14 @@
 
              <a class="navbar-brand">Nuestros Productos</a>
 
+             <form class="form-inline" action="{{ route('cart.buscar') }}" method="GET">
+
+                <input class="form-control mr-sm-2" id="name" name="name" type="search" placeholder="Buscar productos" aria-label="Search">
+
+                <button class="btn btn-primary" type="submit"><i class="fa fa-search" aria-hidden="true" style="margin: 1px"></i></button>
+
+            </form>
+
                 <form class="form-inline" action="{{ route('cart.shopFiltro') }}" method="GET">
 
                 <label for="category_id" style="margin: 10px">Ordenar por:</label>

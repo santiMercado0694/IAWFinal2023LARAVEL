@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Categoria;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -15,6 +16,18 @@ class CartController extends Controller
 
         $products = Product::all();
         $categorias = Categoria::all();
+
+        return view('shop')->withTitle('BAHIA COMPUTACION')->with(['products' => $products , 'categorias' => $categorias]);
+
+    }
+
+    public function buscar(Request $request){
+
+        $name = $request->get('name');
+        $categorias = Categoria::all();
+        $products = Product::select("*")
+                            ->where('name', 'LIKE', '%'.$name.'%')
+                            ->get();
 
         return view('shop')->withTitle('BAHIA COMPUTACION')->with(['products' => $products , 'categorias' => $categorias]);
 
@@ -52,6 +65,8 @@ class CartController extends Controller
             return view('shop')->withTitle('BAHIA COMPUTACION')->with(['products' => $products , 'categorias' => $categorias]);
     
         }
+
+
 
 
     public function cart()  {
