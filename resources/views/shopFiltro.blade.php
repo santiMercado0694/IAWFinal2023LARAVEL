@@ -204,12 +204,6 @@
 
                 </div>
 
-                <div class="d-flex justify-content">
-
-                    {!! $products->links() !!}
-
-                </div> 
-
             </div>
 
         </div>

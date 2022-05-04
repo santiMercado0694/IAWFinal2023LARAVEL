@@ -23,6 +23,8 @@ Route::get('/', [CartController::class, 'shop'])->name('shop');
 
 Route::get('/shop', [CartController::class, 'shop'])->name('shop');
 
+Route::get('/shopF', [CartController::class, 'shopF'])->name('shopF');
+
 Route::get('/cart', [CartController::class, 'cart'])->middleware(['auth'])->name('cart.index');
 
 Route::get('/shop', [CartController::class, 'filtro'])->name('cart.shopFiltro');

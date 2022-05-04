@@ -14,10 +14,23 @@ class CartController extends Controller
 
     {
 
-        $products = Product::all();
+        $products = Product::paginate(8);
         $categorias = Categoria::all();
+    
 
         return view('shop')->withTitle('BAHIA COMPUTACION')->with(['products' => $products , 'categorias' => $categorias]);
+
+    }
+
+    public function shopF()
+
+    {
+
+        $products = Product::all();
+        $categorias = Categoria::all();
+    
+
+        return view('shopFiltro')->withTitle('BAHIA COMPUTACION')->with(['products' => $products , 'categorias' => $categorias]);
 
     }
 
@@ -28,8 +41,9 @@ class CartController extends Controller
         $products = Product::select("*")
                             ->where('name', 'LIKE', '%'.$name.'%')
                             ->get();
+                            
 
-        return view('shop')->withTitle('BAHIA COMPUTACION')->with(['products' => $products , 'categorias' => $categorias]);
+        return view('shopFiltro')->withTitle('BAHIA COMPUTACION')->with(['products' => $products , 'categorias' => $categorias]);
 
     }
 
@@ -39,7 +53,8 @@ class CartController extends Controller
 
             if($request->category_id == 0){
 
-                $products = Product::all();
+                $products = Product::paginate(8);
+                return view('shop')->withTitle('BAHIA COMPUTACION')->with(['products' => $products , 'categorias' => $categorias]);
             }
             elseif($request->category_id == 100000){
 
@@ -62,7 +77,7 @@ class CartController extends Controller
 
              }
                        
-            return view('shop')->withTitle('BAHIA COMPUTACION')->with(['products' => $products , 'categorias' => $categorias]);
+            return view('shopFiltro')->withTitle('BAHIA COMPUTACION')->with(['products' => $products , 'categorias' => $categorias]);
     
         }
 
