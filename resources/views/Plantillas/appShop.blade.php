@@ -16,6 +16,7 @@
 
             <!-- Footer -->
 	<section id="footer">
+
 		<div class="container">
 
 			<div class="row text-center text-xs-center text-sm-left text-md-left" >
@@ -35,7 +36,7 @@
 
 				<div class="col-xs-12 col-sm-4 col-md-4" >
 
-					<h5>Contactenos</h5>
+					<h5>Contactanos</h5>
 
 					<ul class="list-unstyled quick-links">
 
