@@ -18,5 +18,29 @@ class CategoriaSeeder extends Seeder
         Categoria::create([ 
             'nombre' => 'Sin categoria'          
         ]);
+
+        Categoria::create([ 
+            'nombre' => 'Computadora'          
+        ]);
+
+        Categoria::create([ 
+            'nombre' => 'Celular'          
+        ]);
+
+        Categoria::create([ 
+            'nombre' => 'Auriculares'          
+        ]);
+
+        Categoria::create([ 
+            'nombre' => 'Camara'          
+        ]);
+
+        Categoria::create([ 
+            'nombre' => 'Televisor'          
+        ]);
+
+        Categoria::create([ 
+            'nombre' => 'Consola'          
+        ]);
     }
 }

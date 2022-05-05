@@ -77,11 +77,11 @@
                                             
 											<td>{{ $product->name }}</td>
 											<td>{{ $product->details }}</td>
-                                            <td WIDTH="585" HEIGHT="100">{{ $product->description }}</td>
+                                            <td WIDTH="600" HEIGHT="100">{{ $product->description }}</td>
 											<td>${{ $product->price }}</td>
 											<td>{{ $product->stock }}</td>
                                             <td>{{ $product->categoria->nombre }}</td>                                           
-											<td><img src="/images/{{ $product->image_path }}" style="height: 100px; width: 100px;display: block;" alt="{{ $product->image_path }}"></td>
+											<td WIDTH="180" HEIGHT="100"><img src="/images/{{ $product->image_path }}" style="height: 100px; width: 100px;display: block;" alt="{{ $product->image_path }}"></td>
 
                                             <td>
 
