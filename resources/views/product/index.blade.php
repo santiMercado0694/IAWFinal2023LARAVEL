@@ -87,9 +87,11 @@
 
                                                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">                                       
                                                     <a class="btn btn-sm btn-primary " href="{{ route('products.show',$product->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    <br> <br>
                                                     <a class="btn btn-sm btn-success" href="{{ route('product.editar',$product->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
+                                                    <br> <br>
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
 
