@@ -31,7 +31,7 @@
                                           <input class="form-control" type="text" minlength="1" placeholder="Nombre del producto" id="name" name="name" required>                                             
   
                                           <label><strong>Detalle:</strong></label>
-                                          <input class="form-control" type="text" value="{{ $product->details}}" placeholder="Detalle del producto" id="details" name="details" >
+                                          <input class="form-control" type="text" value="{{ $product->details}}" placeholder="Detalle del producto" id="details" name="details" required>
 
                                           <label><strong>Descripcion:</strong></label>
                                           <textarea class="form-control" type="textarea" placeholder="Descripcion del producto" id="description" name="description" ></textarea>                                      
