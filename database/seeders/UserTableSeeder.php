@@ -29,12 +29,12 @@ class UserTableSeeder extends Seeder
         Permission::create(['name' => 'products.edit'])->syncRoles([$jefe, $empleado]);
         Permission::create(['name' => 'products.show'])->syncRoles([$jefe, $empleado]);*/
 
-         User::create([
-             'name' => 'Santiago' ,
-             'email' => 'santimercado06.94@gmail.com' ,
-             'email_verified_at' => null ,
-             'password' => bcrypt('12341234')
-         ]);//->assignRole('Jefe');
+        User::create([
+            'name' => 'BahiaComputacionAdmin' ,
+            'email' => 'BahiaComputacionAdmin@gmail.com' ,
+            'email_verified_at' => null ,
+            'password' => bcrypt('12341234')
+        ]);
 
         User::create([
             'name' => 'Juan' ,
