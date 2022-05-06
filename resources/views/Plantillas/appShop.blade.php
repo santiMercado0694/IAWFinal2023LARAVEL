@@ -53,7 +53,7 @@
 
                     <br><br><br>
 
-					<p class="h6">© Copyright.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">BahiaComputacion</a></p>
+					<p class="h6">© Copyright.<a class="text-green ml-2" target="_blank">BahiaComputacion</a></p>
 
 				</div>			
 
