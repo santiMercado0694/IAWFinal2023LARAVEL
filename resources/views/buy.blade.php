@@ -48,8 +48,6 @@
 
                                 <b>Cantidad: </b>{{ $item->quantity}}<br>
 
-                                {{--                                <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }}--}}
-
                             </p>
 
                         </div>
