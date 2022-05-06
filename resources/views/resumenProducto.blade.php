@@ -43,7 +43,7 @@
 
         @endforeach
 
-        <p>Total pagado: ${{ $total }}</p>
+        <p>Total: ${{ $total }}</p>
 
 
             <form action="{{ route('shop') }}" method="GET">
