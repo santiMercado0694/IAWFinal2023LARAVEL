@@ -14,7 +14,6 @@
 
 @section('footer')
 
-            <!-- Footer -->
 	<section id="footer">
 
 		<div class="container">
@@ -22,8 +21,7 @@
 			<div class="row text-center text-xs-center text-sm-left text-md-left" >
 
                 <div class="col-md-6 mt-md-0 mt-3">
-
-          
+   
                     <h5 class="text-uppercase">Nuestros Sponsors</h5>
 
                         <img src="/images/amd.png" style="height: 120px; width: 170px; display: inline-block; text-align: center;">
@@ -40,9 +38,9 @@
 
 					<ul class="list-unstyled quick-links">
 
-						<li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Direccion : Alsina 232 Bahia Blanca</a></li>
-						<li><a href="/"><i class="fa fa-envelope" aria-hidden="true"></i>Mail : Bahiacomputacion@gmail.com</a></li>
-						<li><a href="/"><i class="fa fa-phone" aria-hidden="true"></i>Telefono: 2914675342</a></li>
+						<li><a><i class="fa fa-home" aria-hidden="true"></i>Direccion : Alsina 232 Bahia Blanca</a></li>
+						<li><a><i class="fa fa-envelope" aria-hidden="true"></i>Mail : Bahiacomputacion@gmail.com</a></li>
+						<li><a><i class="fa fa-phone" aria-hidden="true"></i>Telefono: 2914675342</a></li>
 
 					</ul>
 				</div>
@@ -57,9 +55,7 @@
 
 					<p class="h6">© Copyright.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">BahiaComputacion</a></p>
 
-				</div>
-
-				
+				</div>			
 
 			</div>	
 
