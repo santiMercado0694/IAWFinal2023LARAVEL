@@ -41,8 +41,15 @@ class ProductController extends Controller
             'category_id' => 'required',
             'image_path' => 'required'
         ]);
+
+            $file = $request->image_path;
+            $name = time().$file->getClientOriginalName();
+            $file->move('images/', $name);
    
             $product = Product::create($request->all());
+
+            $product->image_path = $name;
+            $product->save();
 
             return redirect()->route('products.index')
                 ->with('success', ' El producto ' . $product->name .' se agrego exitosamente');
@@ -88,6 +95,10 @@ class ProductController extends Controller
             'image_path' => 'required'
         ]);
 
+        $file = $request->image_path;
+        $name = time().$file->getClientOriginalName();
+        $file->move('images/', $name);
+
        $product = Product::find($request->id);
        $nombre = $product->name;
        $product->name = $request->name;
@@ -96,7 +107,7 @@ class ProductController extends Controller
        $product->price = $request->price; 
        $product->stock = $request->stock; 
        $product->category_id = $request->category_id;
-       $product->image_path = $request->image_path;  
+       $product->image_path =  $name;  
        $product->save();
        
        return redirect()->route('products.index')

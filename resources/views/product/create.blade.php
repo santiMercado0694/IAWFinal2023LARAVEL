@@ -22,7 +22,7 @@
 
                     <div class="card-body">
 
-                        <form class="needs-validation" method="POST" action="{{ route('product.crearProducto') }}" novalidate>
+                        <form class="needs-validation" enctype="multipart/form-data" method="POST" action="{{ route('product.crearProducto') }}" novalidate>
                         {{ csrf_field() }}
                             
                             <div class="form-group row">

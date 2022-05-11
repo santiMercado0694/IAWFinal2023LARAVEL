@@ -20,7 +20,7 @@
 
                     <div class="card-body">
 
-                        <form class="needs-validation"  action="{{ route('product.actualizar')}}" method="POST" novalidate>
+                        <form class="needs-validation" enctype="multipart/form-data" action="{{ route('product.actualizar')}}" method="POST" novalidate>
                           {{ csrf_field() }}
                             
                           <div class="form-group row">
@@ -52,7 +52,7 @@
                                         </select>
 
                                         <label><strong>Imagen:</strong></label>
-                                        <input class="form-control-file" type="file" value="{{$product->image_path}}" id="image_path" name="image_path" required>
+                                        <input class="form-control-file" type="file"  id="image_path" name="image_path" required>
                                         <div class="invalid-feedback">
                                             Seleccione una imagen para el producto.
                                         </div> 
