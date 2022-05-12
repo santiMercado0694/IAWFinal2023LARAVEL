@@ -43,10 +43,17 @@
                                         <input class="form-control" type="number" minlength="1" min="0" value="{{ $product->stock }}" id="stock" name="stock" required>
 
                                         <label><strong>Categoria:</strong></label>
-                                        <select class="form-control" placeholder="Categoria del producto" id="category_id" name="category_id" required> 
+                                        <select class="form-control" placeholder="Categoria del producto" id="category_id" name="category_id" required>
+                                            <option selected value="{{ $product->categoria->id }}">{{ $product->categoria->nombre }}</option> 
 
                                               @foreach ($categorias as $categoria )
-                                                 <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option> 
+
+                                                    @if($categoria->id != $product->categoria->id )
+
+                                                        <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option> 
+
+                                                    @endif
+
                                               @endforeach  
                                                 
                                         </select>
