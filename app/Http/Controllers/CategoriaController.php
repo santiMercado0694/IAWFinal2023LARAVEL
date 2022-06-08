@@ -35,7 +35,7 @@ class CategoriaController extends Controller
             $categoria = Categoria::create($request->all());
 
             return redirect()->route('categoria.index')
-                ->with('success', ' La categoria' . $categoria->nombre .' se agrego exitosamente');
+                ->with('success', ' La categoria ' . $categoria->nombre .' se agrego exitosamente');
 
         }
 
