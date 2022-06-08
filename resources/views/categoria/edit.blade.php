@@ -84,7 +84,7 @@
 
                 <div class="float-right">
 
-                    <a class="btn btn-success" href="{{ route('products.index') }}"> Volver</a>
+                    <a class="btn btn-success" href="{{ route('categoria.index') }}"> Volver</a>
 
                 </div>
 
