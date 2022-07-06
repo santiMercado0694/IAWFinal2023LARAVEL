@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\RoleSeeder;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 Use Illuminate\Support\Facades\DB;
 
 
@@ -18,5 +19,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UserTableSeeder::class);
+        $this->call(CategoriaSeeder::class);
+        $this->call(ProductsTableSeeder::class);
+        $this->call(RoleSeeder::class);
     }
 }
